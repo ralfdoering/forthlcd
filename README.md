@@ -20,7 +20,7 @@ This is my first attempt on writing Forth code to interface an HD44780 based LCD
 
 # Origin
 
-The base ideas for the forth code come from an [article](http://www.mikrocontroller.net/articles/AVR-Tutorial:_LCD) at http://www.mikrocontroller.net. I just adapted their assembler code to Forth.
+The base ideas for the forth code came from an [article](http://www.mikrocontroller.net/articles/AVR-Tutorial:_LCD) at http://www.mikrocontroller.net. I just adapted their assembler code to Forth.
 
 
 
