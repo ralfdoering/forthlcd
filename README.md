@@ -1,7 +1,7 @@
 # forthlcd
 Example code on how to connect a HD44780 or compatible LCD display to an amForth powered device
 
-This is my first attempt on writing Forth code to interface an HD44780 based LCD to an Arduino running [AmForth](http://amforth.sourceforge.net/). For now, the pin setup is hardwired to the scheme shown below, but this will be changed in a future version. The code is running AmForth 5.7, the Forth kernel is build with the following `dict_appl.inc`:
+This is my first attempt on writing Forth code to interface an HD44780 based LCD to an Arduino running [AmForth](http://amforth.sourceforge.net/). For now, the pin setup is hardwired to the scheme shown below, but this will be changed in a future version. The code is tested with AmForth 5.7, the Forth kernel is build with the following `dict_appl.inc`:
 
 ```
 ; this dictionary contains optional words
@@ -24,7 +24,7 @@ The base ideas for the forth code came from an [article](http://www.mikrocontrol
 
 
 
-# Hardware setup ##
+# Hardware setup #
 
 The LCD will work in 4bit mode, with the following connections:
 
