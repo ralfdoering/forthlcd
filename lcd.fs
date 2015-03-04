@@ -71,14 +71,14 @@ PORTD 2 portpin: pin:lcd:rs
     delay5ms
     \ write 0011 to the High nible of PORTD 3 times
     3 0 ?do
-	PORTD c@ %00111111 AND PORTD C!
-	\ %00110000 PORTD C!
+	PORTD c@ %00001111 AND \ fetch PORTD and set high nibble to 0000
+	%00110000 OR PORTD c!  \ set high nibble to 0010 and leave low nibble untouched
 	lcd:enable
 	delay5ms
     loop
-    \ 4 Bit Mode
-    PORTD c@ %00101111 AND PORTD C!
-    \ %00100000 PORTD C!
+    \ 4 Bit Mode --> set high nibble to 0010
+    PORTD c@ %00001111 AND \ fetch PORTD and set high nibble to 0000
+    %00100000 OR PORTD c!  \ set high nibble to 0010 and leave low nibble untouched
     lcd:enable
     delay5ms
     \ 4 Bit, zwei Zeilen, 5x8
@@ -105,3 +105,12 @@ PORTD 2 portpin: pin:lcd:rs
 : lcd:clear
     1 lcd:command
 ;
+
+\ display string from flash
+: lcd:istring ( caddr u -- )
+    0 ?do
+	dup I + @I lcd:data
+    loop
+    drop
+;
+    
